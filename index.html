@@ -423,7 +423,7 @@
     .hero-stats {
       display: flex;
       gap: 24px;
-      margin-top: 56px;
+      margin-top: 2rem;
       padding-top: 40px;
       border-top: 1px solid rgba(255,255,255,0.1);
     }
@@ -437,7 +437,7 @@
     }
 
     .hero-stat-label {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: rgba(255,255,255,0.55);
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -533,16 +533,16 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 16px;
-      margin-top: 32px;
+      margin-top: 1.5rem;
     }
 
     .about-value {
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      padding: 16px;
+      padding: 1rem;
       background: rgba(255,255,255,0.04);
-      border-radius: var(--radius);
+      border-radius: 8px;
       border: 1px solid rgba(255,255,255,0.07);
     }
 
@@ -589,6 +589,9 @@
     }
 
     .kurs-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: var(--radius);
@@ -654,6 +657,7 @@
     }
 
     .kurs-desc {
+      flex: 1;
       font-size: 0.875rem;
       color: rgba(255,255,255,0.6);
       line-height: 1.7;
@@ -980,7 +984,9 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 32px;
-      margin-bottom: 48px;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 2rem;
     }
 
     .footer-brand img {
@@ -1040,13 +1046,24 @@
 
     /* ── 600px and up ─────────────────────── */
     @media (min-width: 600px) {
-      .hero-actions { flex-direction: row; align-items: center; }
+      .hero-actions { flex-direction: row; align-items: center; gap: 12px; }
       .hero-actions .btn { width: auto; }
       .form-row { grid-template-columns: 1fr 1fr; }
       .kurse-grid { grid-template-columns: repeat(2, 1fr); }
       .about-values { grid-template-columns: 1fr 1fr; }
       .abo-cards { grid-template-columns: repeat(3, 1fr); }
-      .preis-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .preis-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+    }
+
+    /* ── 640px and up ─────────────────────── */
+    @media (min-width: 640px) {
+      .wettkampf-card {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+      .wettkampf-img-wrap { height: 100%; min-height: 200px; border-radius: var(--radius) 0 0 var(--radius); }
     }
 
     /* ── 768px and up ─────────────────────── */
@@ -1054,9 +1071,18 @@
       :root { --nav-h: 72px; }
 
       .nav-links { display: flex; }
-      .nav-cta { display: inline-flex; }
       .hamburger { display: none; }
       .nav-logo img { max-width: none; height: 48px; }
+      .nav-cta {
+        display: inline-flex;
+        font-size: 13px;
+        padding: 7px 16px;
+        border-radius: 6px;
+        font-weight: 500;
+        white-space: nowrap;
+        min-height: unset;
+        letter-spacing: 0.05em;
+      }
 
       .hero-title { font-size: 2.375rem; }
       .hero-stats { gap: 40px; }
@@ -1066,7 +1092,6 @@
       .team-grid { grid-template-columns: repeat(3, 1fr); }
 
       .events-grid { grid-template-columns: 1fr 1fr; }
-      .wettkampfe-grid { grid-template-columns: 1fr 1fr; }
 
       .galerie-grid { grid-template-columns: repeat(3, 1fr); }
       .galerie-videos-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1092,7 +1117,7 @@
       .galerie-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
       .galerie-item:nth-child(5) { grid-column: span 2; }
 
-      .footer-grid { grid-template-columns: 2fr 1fr 1fr; gap: 64px; }
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; gap: 64px; }
       .footer-grid .footer-brand { grid-column: span 1; }
 
       .pruefung-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1245,15 +1270,15 @@
     .team-card:hover::before { transform: scaleX(1); }
 
     .team-avatar {
-      width: 200px; height: 200px;
+      width: 64px; height: 64px;
       border-radius: 50%;
       background: var(--red);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 24px;
+      margin: 0 auto 1rem;
       font-family: 'Oswald', sans-serif;
-      font-size: 3rem;
+      font-size: 20px;
       font-weight: 700;
       color: var(--white);
       letter-spacing: 0.04em;
@@ -1298,7 +1323,7 @@
     .stundenplan-table-wrap {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      border-radius: var(--radius);
+      border-radius: 8px;
       border: 1px solid rgba(255,255,255,0.07);
     }
 
@@ -1505,7 +1530,6 @@
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: var(--radius);
-      overflow: hidden;
       position: relative;
       transition: border-color var(--transition), transform var(--transition);
     }
