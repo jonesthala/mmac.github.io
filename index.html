@@ -2242,83 +2242,276 @@
         Flexible Trainingszeiten für alle Altersgruppen und Disziplinen.
       </p>
     </div>
-    <div class="stundenplan-grid">
+    <div class="reveal">
 
-      <div class="reveal">
-        <div class="stundenplan-table-wrap" role="region" aria-label="Wöchentlicher Stundenplan" tabindex="0">
-          <table class="stundenplan-table">
-            <thead>
-              <tr>
-                <th scope="col">Zeit</th>
-                <th scope="col">Mo</th>
-                <th scope="col">Di</th>
-                <th scope="col">Mi</th>
-                <th scope="col">Do</th>
-                <th scope="col">Fr</th>
-                <th scope="col">Sa</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="time-col">10:00</td>
-                <td>–</td>
-                <td>–</td>
-                <td>–</td>
-                <td>–</td>
-                <td>–</td>
-                <td class="aktiv">Functional<br />Training</td>
-              </tr>
-              <tr>
-                <td class="time-col">11:00</td>
-                <td>–</td>
-                <td>–</td>
-                <td>–</td>
-                <td>–</td>
-                <td>–</td>
-                <td class="aktiv">Kinder<br />Hapkido</td>
-              </tr>
-              <tr>
-                <td class="time-col">18:00</td>
-                <td class="aktiv">Kinder<br />Hapkido</td>
-                <td>–</td>
-                <td class="aktiv">Kinder<br />Hapkido</td>
-                <td>–</td>
-                <td>–</td>
-                <td>–</td>
-              </tr>
-              <tr>
-                <td class="time-col">19:00</td>
-                <td class="aktiv">Kickboxen<br />/ K1</td>
-                <td class="aktiv">Thaiboxen</td>
-                <td class="aktiv">Kickboxen<br />/ K1</td>
-                <td class="aktiv">Thaiboxen</td>
-                <td class="aktiv">Kickboxen<br />/ K1</td>
-                <td>–</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <!-- Hinweistext -->
+      <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.3);border-radius:8px;padding:16px 20px;margin-bottom:2rem;font-size:0.9rem;color:rgba(255,255,255,0.82);line-height:1.7;">
+        <strong style="display:block;color:var(--white);font-family:'Oswald',sans-serif;font-size:0.95rem;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px;">Wichtige Hinweise</strong>
+        Probetrainings sind gratis und jederzeit möglich.<br>
+        <strong>Kinderkickboxen:</strong> Probetraining nur Dienstag 16:45 möglich. Danach muss der 5-malige Basis Kurs (Di. 16:45) absolviert werden – anschliessend reguläres Kinderkickboxen Di. &amp; Fr. 17:30.
       </div>
 
-      <div class="reveal reveal-delay-1">
-        <div class="preis-cards">
-          <article class="preis-card" aria-label="Schnupperstunde CHF 20">
-            <p class="preis-title">Schnupperstunde</p>
-            <p class="preis-price">CHF 20.–</p>
-            <p class="preis-desc">Einmalig, kein Abo nötig. Einfach vorbeikommen und reinschnuppern.</p>
-          </article>
-          <article class="preis-card" aria-label="Monatsbeitrag CHF 95">
-            <p class="preis-title">Monatsbeitrag</p>
-            <p class="preis-price">CHF 95.– <small style="font-size:1.1rem;font-weight:400;">/ Monat</small></p>
-            <p class="preis-desc">Unbegrenzt Training, alle Kurse inbegriffen. Monatlich kündbar.</p>
-          </article>
-          <article class="preis-card" aria-label="Familien-Abo CHF 160">
-            <p class="preis-title">Familien-Abo</p>
-            <p class="preis-price">CHF 160.– <small style="font-size:1.1rem;font-weight:400;">/ Monat</small></p>
-            <p class="preis-desc">Bis 4 Familienmitglieder. Gemeinsam trainieren, gemeinsam sparen.</p>
-          </article>
+      <!-- Stundenplan Tabelle -->
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:8px;border:1px solid rgba(255,255,255,0.1);">
+        <table style="width:100%;min-width:700px;border-collapse:collapse;font-size:13px;">
+          <thead>
+            <tr style="background:rgba(255,255,255,0.06);">
+              <th style="padding:10px 12px;text-align:left;border-bottom:2px solid rgba(255,255,255,0.1);width:90px;font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);">Tag</th>
+              <th style="padding:10px 12px;text-align:left;border-bottom:2px solid rgba(255,255,255,0.1);width:60px;font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);">Dojo</th>
+              <th style="padding:10px 12px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);">16:30–17:30</th>
+              <th style="padding:10px 12px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);">17:30–18:30</th>
+              <th style="padding:10px 12px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);">18:30–19:30</th>
+              <th style="padding:10px 12px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);">19:30–21:00</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- MONTAG -->
+            <tr>
+              <td rowspan="2" style="padding:10px 12px;font-weight:600;font-family:'Oswald',sans-serif;border-bottom:2px solid rgba(255,255,255,0.1);vertical-align:top;color:var(--white);text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;">Montag</td>
+              <td style="padding:10px 12px;color:rgba(255,255,255,0.45);font-size:12px;">Dojo I</td>
+              <td style="padding:8px;text-align:center;background:rgba(254,249,195,0.12);border-radius:4px;">Kids Hapkido I<br><span style="font-size:11px;color:#fde68a;">Weiss-Orange Gurt</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(254,249,195,0.12);border-radius:4px;">Kids Hapkido II<br><span style="font-size:11px;color:#fde68a;">Ab Orange Gurt</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(220,252,231,0.1);border-radius:4px;">Kickboxen<br><span style="font-size:11px;color:#86efac;">Frauen</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(220,252,231,0.1);border-radius:4px;">Kickboxen<br><span style="font-size:11px;color:#86efac;">Technik</span></td>
+            </tr>
+            <tr>
+              <td style="padding:10px 12px;color:rgba(255,255,255,0.45);font-size:12px;border-bottom:2px solid rgba(255,255,255,0.1);">Dojo II</td>
+              <td style="padding:8px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);"></td>
+              <td style="padding:8px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);"></td>
+              <td style="padding:8px;text-align:center;background:rgba(243,232,255,0.1);border-radius:4px;border-bottom:2px solid rgba(255,255,255,0.1);">Zumba mit Bigi<br><span style="font-size:11px;color:#d8b4fe;">18:30–19:30</span></td>
+              <td style="padding:8px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);"></td>
+            </tr>
+            <!-- DIENSTAG -->
+            <tr>
+              <td style="padding:10px 12px;font-weight:600;font-family:'Oswald',sans-serif;border-bottom:2px solid rgba(255,255,255,0.1);vertical-align:top;color:var(--white);text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;">Dienstag</td>
+              <td style="padding:10px 12px;color:rgba(255,255,255,0.45);font-size:12px;border-bottom:2px solid rgba(255,255,255,0.1);">Dojo I<br><span style="font-size:11px;">(ab 16:45)</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(254,249,195,0.12);border-radius:4px;border-bottom:2px solid rgba(255,255,255,0.1);">Kickboxen Kids<br><span style="font-size:11px;color:#fde68a;">Basic / Kurs ab 6j</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(254,249,195,0.12);border-radius:4px;border-bottom:2px solid rgba(255,255,255,0.1);">Kickboxen Kids</td>
+              <td style="padding:8px;text-align:center;background:rgba(220,252,231,0.1);border-radius:4px;border-bottom:2px solid rgba(255,255,255,0.1);">Kickboxen<br><span style="font-size:11px;color:#86efac;">Junioren Ab 13J</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(220,252,231,0.1);border-radius:4px;border-bottom:2px solid rgba(255,255,255,0.1);">Kickboxen<br><span style="font-size:11px;color:#86efac;">Erwachsene ab 17j</span></td>
+            </tr>
+            <!-- MITTWOCH -->
+            <tr>
+              <td rowspan="2" style="padding:10px 12px;font-weight:600;font-family:'Oswald',sans-serif;border-bottom:2px solid rgba(255,255,255,0.1);vertical-align:top;color:var(--white);text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;">Mittwoch</td>
+              <td style="padding:10px 12px;color:rgba(255,255,255,0.45);font-size:12px;">Dojo I</td>
+              <td style="padding:8px;text-align:center;"></td>
+              <td style="padding:8px;text-align:center;background:rgba(254,249,195,0.12);border-radius:4px;">Bonsei Training<br><span style="font-size:11px;color:#fde68a;">ab 4j / Hapkido</span><br><span style="font-size:11px;color:rgba(255,255,255,0.5);">17:30–18:15</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(191,219,254,0.1);border-radius:4px;">Konditions­training</td>
+              <td style="padding:8px;text-align:center;background:rgba(224,231,255,0.1);border-radius:4px;">Krav Maga</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 12px;color:rgba(255,255,255,0.45);font-size:12px;border-bottom:2px solid rgba(255,255,255,0.1);">Dojo II</td>
+              <td style="padding:8px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);"></td>
+              <td style="padding:8px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);"></td>
+              <td style="padding:8px;text-align:center;background:rgba(243,232,255,0.1);border-radius:4px;border-bottom:2px solid rgba(255,255,255,0.1);">Pilates / Yoga<br><span style="font-size:11px;color:#d8b4fe;">mit Bigi<br>18:00–19:00</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(254,226,226,0.1);border-radius:4px;border-bottom:2px solid rgba(255,255,255,0.1);">Hapkido<br><span style="font-size:11px;color:#fca5a5;">Erwachsene<br>Selbstverteidigung<br>19:45–20:45</span></td>
+            </tr>
+            <!-- DONNERSTAG -->
+            <tr>
+              <td rowspan="2" style="padding:10px 12px;font-weight:600;font-family:'Oswald',sans-serif;border-bottom:2px solid rgba(255,255,255,0.1);vertical-align:top;color:var(--white);text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;">Donnerstag</td>
+              <td style="padding:10px 12px;color:rgba(255,255,255,0.45);font-size:12px;">Dojo I</td>
+              <td style="padding:8px;text-align:center;"></td>
+              <td style="padding:8px;text-align:center;background:rgba(254,249,195,0.12);border-radius:4px;">Kids Hapkido I&amp;II<br><span style="font-size:11px;color:#fde68a;">Für alle</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(220,252,231,0.1);border-radius:4px;">Kickboxen<br><span style="font-size:11px;color:#86efac;">Frauen</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(191,219,254,0.1);border-radius:4px;">Sparring<br><span style="font-size:11px;color:#93c5fd;">Gym offen</span></td>
+            </tr>
+            <tr>
+              <td style="padding:10px 12px;color:rgba(255,255,255,0.45);font-size:12px;border-bottom:2px solid rgba(255,255,255,0.1);">Dojo II</td>
+              <td style="padding:8px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);"></td>
+              <td style="padding:8px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);"></td>
+              <td style="padding:8px;text-align:center;background:rgba(243,232,255,0.1);border-radius:4px;border-bottom:2px solid rgba(255,255,255,0.1);">Pilates / Yoga<br><span style="font-size:11px;color:#d8b4fe;">mit Bigi<br>18:30–19:30</span></td>
+              <td style="padding:8px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);"></td>
+            </tr>
+            <!-- FREITAG -->
+            <tr>
+              <td style="padding:10px 12px;font-weight:600;font-family:'Oswald',sans-serif;border-bottom:2px solid rgba(255,255,255,0.1);color:var(--white);text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;">Freitag</td>
+              <td style="padding:10px 12px;color:rgba(255,255,255,0.45);font-size:12px;border-bottom:2px solid rgba(255,255,255,0.1);">Dojo I</td>
+              <td style="padding:8px;text-align:center;border-bottom:2px solid rgba(255,255,255,0.1);"></td>
+              <td style="padding:8px;text-align:center;background:rgba(254,249,195,0.12);border-radius:4px;border-bottom:2px solid rgba(255,255,255,0.1);">Kickboxen Kids</td>
+              <td style="padding:8px;text-align:center;background:rgba(220,252,231,0.1);border-radius:4px;border-bottom:2px solid rgba(255,255,255,0.1);">Kickboxen<br><span style="font-size:11px;color:#86efac;">Junioren Ab 13J</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(220,252,231,0.1);border-radius:4px;border-bottom:2px solid rgba(255,255,255,0.1);">Kickboxen<br><span style="font-size:11px;color:#86efac;">Erwachsene ab 17j</span></td>
+            </tr>
+            <!-- SAMSTAG -->
+            <tr>
+              <td style="padding:10px 12px;font-weight:600;font-family:'Oswald',sans-serif;color:var(--white);text-transform:uppercase;letter-spacing:0.04em;white-space:nowrap;">Samstag</td>
+              <td style="padding:10px 12px;color:rgba(255,255,255,0.45);font-size:12px;">Dojo I</td>
+              <td style="padding:8px;text-align:center;"></td>
+              <td style="padding:8px;text-align:center;"></td>
+              <td style="padding:8px;text-align:center;background:rgba(191,219,254,0.1);border-radius:4px;">Functional Training<br><span style="font-size:11px;color:#93c5fd;">10:00–11:00</span></td>
+              <td style="padding:8px;text-align:center;background:rgba(254,249,195,0.12);border-radius:4px;">Kinder Hapkido<br><span style="font-size:11px;color:#fde68a;">11:00–12:00</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Legende -->
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:1rem;font-size:12px;color:rgba(255,255,255,0.6);">
+        <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:3px;background:rgba(254,249,195,0.35);border:1px solid rgba(253,230,138,0.4);display:inline-block;flex-shrink:0;"></span> Kinder / Hapkido</span>
+        <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:3px;background:rgba(220,252,231,0.25);border:1px solid rgba(134,239,172,0.3);display:inline-block;flex-shrink:0;"></span> Kickboxen / K1</span>
+        <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:3px;background:rgba(191,219,254,0.25);border:1px solid rgba(147,197,253,0.3);display:inline-block;flex-shrink:0;"></span> Functional / Kondition / Sparring</span>
+        <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:3px;background:rgba(224,231,255,0.2);border:1px solid rgba(165,180,252,0.3);display:inline-block;flex-shrink:0;"></span> Krav Maga</span>
+        <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:3px;background:rgba(243,232,255,0.2);border:1px solid rgba(216,180,254,0.3);display:inline-block;flex-shrink:0;"></span> Pilates / Yoga / Zumba</span>
+        <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:14px;border-radius:3px;background:rgba(254,226,226,0.2);border:1px solid rgba(252,165,165,0.3);display:inline-block;flex-shrink:0;"></span> Hapkido Erwachsene</span>
+      </div>
+
+      <!-- Preisliste -->
+      <div style="overflow-x:auto;margin-top:3rem;">
+        <p class="section-label" style="margin-bottom:8px;">Mitgliedschaft</p>
+        <h3 style="font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--white);margin-bottom:4px;">Preisliste mmac</h3>
+        <p style="color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:1.5rem;">Kickboxen, K1, Thaiboxen, Hapkido, Selbstverteidigung</p>
+        <table style="width:100%;min-width:500px;border-collapse:collapse;font-size:14px;">
+          <thead>
+            <tr style="background:rgba(255,255,255,0.06);">
+              <th style="padding:10px 12px;text-align:left;border-bottom:2px solid rgba(255,255,255,0.1);width:40%;font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);">Abo / Leistung</th>
+              <th style="padding:10px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);">Erwachsene</th>
+              <th style="padding:10px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);">Lehrling</th>
+              <th style="padding:10px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);">Kinder</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:rgba(220,252,231,0.07);">
+              <td colspan="4" style="padding:8px 12px;font-weight:600;font-size:12px;font-family:'Oswald',sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#86efac;border-bottom:1px solid rgba(255,255,255,0.07);">Monats-Abonnemente</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.85);">1 Monats Abo</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);font-weight:600;color:var(--white);">CHF 120.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 100.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 80.–</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);">
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;padding-left:20px;">↳ 1× pro Woche</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;">CHF 60.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;">CHF 50.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;">CHF 40.–</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.85);font-weight:500;">3 Monate Abo</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);font-weight:600;color:var(--white);">CHF 350.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 280.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 225.–</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);">
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;padding-left:20px;">↳ 1× pro Woche</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;">CHF 180.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;">CHF 150.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;">CHF 115.–</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.85);font-weight:500;">6 Monate Abo</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);font-weight:600;color:var(--white);">CHF 650.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 550.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 420.–</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);">
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;padding-left:20px;">↳ 1× pro Woche</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;">CHF 350.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;">CHF 280.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);font-size:13px;">CHF 225.–</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.85);font-weight:500;">12 Monate Abo</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);font-weight:600;color:var(--white);">CHF 1'120.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 950.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 750.–</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);">
+              <td style="padding:8px 12px;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.45);font-size:13px;padding-left:20px;">↳ 1× pro Woche</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.45);font-size:13px;">CHF 700.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.45);font-size:13px;">CHF 750.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.45);font-size:13px;">CHF 450.–</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);">Freie Hallennutzung / Monat</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.35);font-size:13px;">(CHF 10.–)</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">CHF 10.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.45);font-size:12px;">ab 16j</td>
+            </tr>
+            <tr style="background:rgba(191,219,254,0.07);">
+              <td colspan="4" style="padding:8px 12px;font-weight:600;font-size:12px;font-family:'Oswald',sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#93c5fd;border-bottom:1px solid rgba(255,255,255,0.07);">Einmalzahlungen</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.85);">Einschreibegebühr</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 20.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 20.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 20.–</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);">
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.85);">5er Abo Kickboxen Basic Kurs</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);" colspan="3">CHF 75.–</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.85);">10er Abo</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 180.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 160.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 125.–</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);">
+              <td style="padding:8px 12px;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);">20er Abo</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">CHF 340.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">CHF 270.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">CHF 220.–</td>
+            </tr>
+            <tr style="background:rgba(243,232,255,0.07);">
+              <td colspan="4" style="padding:8px 12px;font-weight:600;font-size:12px;font-family:'Oswald',sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#d8b4fe;border-bottom:1px solid rgba(255,255,255,0.07);">Personaltraining</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.85);">Einzeltraining</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 120.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 90.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 60.–</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);">
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.85);">10er Abo Personaltraining</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 1'080.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);">CHF 800.–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);">–</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);">10er Abo Bonsei</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.45);">–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.45);">–</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);">CHF 50.–</td>
+            </tr>
+            <tr style="background:rgba(192,57,43,0.08);">
+              <td colspan="4" style="padding:8px 12px;font-weight:600;font-size:12px;font-family:'Oswald',sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:var(--red-light);border-bottom:1px solid rgba(255,255,255,0.07);">Rabatte</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.85);">mmac Mitgliedschaft</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:#86efac;font-weight:600;">5%</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:#86efac;font-weight:600;">5%</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.05);color:#86efac;font-weight:600;">5% <span style="font-size:11px;font-weight:400;color:rgba(255,255,255,0.4);">kumulierbar</span></td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);">
+              <td style="padding:8px 12px;border-bottom:2px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);">Familienrabatt<br><span style="font-size:12px;color:rgba(255,255,255,0.4);">im selben Haushalt wohnend</span></td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:#86efac;font-weight:600;">10%</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:#86efac;font-weight:600;">10%</td>
+              <td style="padding:8px 12px;text-align:right;border-bottom:2px solid rgba(255,255,255,0.1);color:#86efac;font-weight:600;">10% <span style="font-size:11px;font-weight:400;color:rgba(255,255,255,0.4);">kumulierbar</span></td>
+            </tr>
+            <tr>
+              <td style="padding:8px 12px;color:rgba(255,255,255,0.85);">Kleidung</td>
+              <td colspan="3" style="padding:8px 12px;color:rgba(255,255,255,0.45);">Individuell – auf Anfrage</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Google Calendar -->
+      <div style="margin-top:3rem;">
+        <p class="section-label" style="margin-bottom:8px;">Kalender</p>
+        <h3 style="font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--white);margin-bottom:0.5rem;">mmac Belegung</h3>
+        <p style="color:rgba(255,255,255,0.5);font-size:14px;margin-bottom:1.25rem;">Aktueller Trainingskalender – alle Kurse und Belegungen auf einen Blick.</p>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=mmac%40mmac-center.ch&ctz=Europe%2FZurich&hl=de&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+            style="border:0;width:100%;height:520px;display:block;"
+            frameborder="0"
+            scrolling="no"
+            title="MMAC Center Belegungskalender">
+          </iframe>
         </div>
-        <p class="preis-note">Alle Preise inkl. MwSt. Jahresabo auf Anfrage.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:0.5rem;text-align:right;">
+          <a href="https://calendar.google.com/calendar/embed?src=mmac%40mmac-center.ch&ctz=Europe%2FZurich&hl=de" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.45);transition:color 200ms ease;">In Google Calendar öffnen ↗</a>
+        </p>
       </div>
 
     </div>
