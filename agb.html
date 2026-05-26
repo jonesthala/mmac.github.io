@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGB – mmac GmbH | MMAC Center Bachenbülach</title>
+  <meta name="description" content="Allgemeine Geschäftsbedingungen der mmac GmbH – MMAC Center Bachenbülach." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black:      #0a0a0a;
+      --red:        #c0392b;
+      --red-dark:   #96281b;
+      --red-light:  #e74c3c;
+      --white:      #ffffff;
+      --grey-light: #f5f5f5;
+      --grey:       #9a9a9a;
+      --grey-dark:  #333333;
+      --nav-h:      72px;
+      --radius:     4px;
+      --transition: 200ms ease;
+      --shadow:     0 4px 24px rgba(0,0,0,0.35);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, h3, h4 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .btn-primary { background: var(--red); color: var(--white); }
+    .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+    /* NAV */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: rgba(10,10,10,0.97);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.6);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--nav-h);
+    }
+
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(1.1);
+    }
+
+    /* MAIN */
+    .agb-page {
+      padding-top: calc(var(--nav-h) + 60px);
+      padding-bottom: 100px;
+    }
+
+    .agb-hero {
+      margin-bottom: 64px;
+    }
+
+    .agb-hero .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .agb-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .agb-hero h1 span { color: var(--red); }
+
+    .agb-hero .agb-stand {
+      font-size: 0.875rem;
+      color: var(--grey);
+    }
+
+    .agb-content {
+      max-width: 800px;
+    }
+
+    .agb-section {
+      margin-bottom: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .agb-section:last-child {
+      border-bottom: none;
+    }
+
+    .agb-section h2 {
+      font-size: 1.15rem;
+      color: var(--white);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--red);
+      display: inline-block;
+    }
+
+    .agb-section p,
+    .agb-section li {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.8;
+    }
+
+    .agb-section p { margin-bottom: 12px; }
+    .agb-section p:last-child { margin-bottom: 0; }
+
+    .agb-section ol,
+    .agb-section ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .agb-section li { margin-bottom: 6px; }
+
+    .agb-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.875rem;
+    }
+
+    .agb-table th {
+      background: rgba(192,57,43,0.15);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .agb-table td {
+      padding: 9px 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.65);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .agb-table tr:hover td { background: rgba(255,255,255,0.04); }
+
+    .agb-highlight {
+      border-left: 3px solid var(--red);
+      background: rgba(192,57,43,0.07);
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      margin: 16px 0;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    #footer {
+      background: #050505;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 40px 0 28px;
+    }
+
+    .footer-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      transition: color var(--transition);
+      margin-bottom: 24px;
+    }
+
+    .footer-back:hover { color: var(--white); }
+
+    .footer-bottom-agb {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom-agb p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-h: 64px; }
+      .footer-bottom-agb { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <nav id="navbar" role="navigation" aria-label="Hauptnavigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="MMAC Center – Zur Startseite">
+        <img src="https://55b558c7-resources.wbk.kreativmedia.ch/d9adde2316/templates/protector/images/logo.png"
+             alt="MMAC Center Logo" width="180" height="48" />
+      </a>
+      <a href="index.html#kontakt" class="btn btn-primary">
+        Probetraining buchen
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- MAIN -->
+<main>
+  <div class="agb-page">
+    <div class="container">
+
+      <div class="agb-hero">
+        <p class="section-label">Rechtliches</p>
+        <h1>Allgemeine <span>Geschäftsbedingungen</span></h1>
+        <p class="agb-stand">mmac GmbH &ndash; Stand 2024</p>
+      </div>
+
+      <div class="agb-content">
+
+        <!-- Art. 1 -->
+        <div class="agb-section">
+          <h2>Art. 1 &ndash; Geltungsbereich, Änderungen AGB, Zahlungsmittel</h2>
+          <p>1.1 Die vorliegenden Allgemeinen Geschäftsbedingungen (AGB) regeln das Vertragsverhältnis zwischen der mmac GmbH (nachfolgend «mmac») und den Mitgliedern bzw. Kunden (nachfolgend «Mitglied»).</p>
+          <p>1.2 mmac behält sich das Recht vor, die AGB jederzeit zu ändern. Änderungen werden dem Mitglied schriftlich oder per E-Mail mitgeteilt und gelten als akzeptiert, wenn das Mitglied nicht innerhalb von 30 Tagen schriftlich widerspricht.</p>
+          <p>1.3 Als Zahlungsmittel werden Bargeld, Banküberweisung und weitere von mmac akzeptierte Zahlungsformen anerkannt.</p>
+        </div>
+
+        <!-- Art. 2 -->
+        <div class="agb-section">
+          <h2>Art. 2 &ndash; Mitgliedschaft</h2>
+          <p>2.1 Die Mitgliedschaft beim MMAC Center beginnt mit der Unterzeichnung des Vertrages und der Leistung der ersten Zahlung.</p>
+          <p>2.2 Die Mitgliedschaft ist persönlich und nicht übertragbar.</p>
+          <p>2.3 Minderjährige benötigen die schriftliche Zustimmung eines Erziehungsberechtigten.</p>
+          <p>2.4 mmac behält sich das Recht vor, eine Mitgliedschaft ohne Angabe von Gründen abzulehnen oder bei Verstoss gegen die Hausordnung fristlos zu kündigen, ohne Anspruch auf Rückerstattung geleisteter Beiträge.</p>
+        </div>
+
+        <!-- Art. 3 -->
+        <div class="agb-section">
+          <h2>Art. 3 &ndash; Informationspflicht</h2>
+          <p>3.1 Das Mitglied ist verpflichtet, mmac über Änderungen der persönlichen Daten (Adresse, E-Mail, Telefon) umgehend zu informieren.</p>
+          <p>3.2 Das Mitglied ist verpflichtet, mmac über gesundheitliche Einschränkungen, welche die Trainingsteilnahme beeinflussen könnten, zu informieren. Die Teilnahme am Training erfolgt auf eigene Verantwortung.</p>
+          <p>3.3 Kommunikation zwischen mmac und dem Mitglied erfolgt vorwiegend per E-Mail an die zuletzt bekannte Adresse.</p>
+        </div>
+
+        <!-- Art. 4 -->
+        <div class="agb-section">
+          <h2>Art. 4 &ndash; Angebot</h2>
+          <p>4.1 mmac bietet Kurse und Trainingsangebote in verschiedenen Kampfsport- und Fitnessdisziplinen an, wie auf der Website und im aktuellen Stundenplan ersichtlich.</p>
+          <p>4.2 mmac behält sich das Recht vor, Kurse, Trainingszeiten und das Angebot ohne vorherige Ankündigung anzupassen, zu ändern oder zu streichen. Ein Anspruch auf Durchführung eines bestimmten Kurses besteht nicht.</p>
+          <p>4.3 Schnupperstunden sind einmalig und begründen keine Mitgliedschaft.</p>
+        </div>
+
+        <!-- Art. 5 -->
+        <div class="agb-section">
+          <h2>Art. 5 &ndash; Chip</h2>
+          <p>5.1 Bei Eintritt erhält jedes Mitglied einen Chip zur elektronischen Zugangskontrolle. Für diesen Chip wird ein Depot von <strong>CHF 10.–</strong> erhoben.</p>
+          <p>5.2 Der Chip ist zwingend bei jedem Trainingsbesuch mitzubringen und dient der elektronischen Erfassung der Anwesenheit.</p>
+          <p>5.3 Bei Verlust oder Beschädigung des Chips werden die Kosten für einen Ersatzchip dem Mitglied in Rechnung gestellt. Das Depot wird bei Vertragsende gegen Rückgabe des Chips zurückerstattet.</p>
+          <p>5.4 Der Chip ist nicht übertragbar. Missbrauch kann zur sofortigen Kündigung der Mitgliedschaft führen.</p>
+        </div>
+
+        <!-- Art. 6 -->
+        <div class="agb-section">
+          <h2>Art. 6 &ndash; AGB, Hausordnung, Nutzungsreglemente, Weisungen</h2>
+          <p>6.1 Mit Abschluss des Mitgliedschaftsvertrages akzeptiert das Mitglied die vorliegenden AGB sowie die Hausordnung des MMAC Centers in ihrer jeweils gültigen Fassung.</p>
+          <p>6.2 Das Mitglied ist verpflichtet, die Hausordnung, Nutzungsreglemente und Weisungen der Trainer und Mitarbeiter von mmac zu respektieren und einzuhalten.</p>
+          <p>6.3 Verstösse gegen die Hausordnung oder das Ansehen von mmac können zur fristlosen Kündigung ohne Rückerstattung führen.</p>
+        </div>
+
+        <!-- Art. 7 -->
+        <div class="agb-section">
+          <h2>Art. 7 &ndash; Zahlung und Zahlungsverzug</h2>
+          <p>7.1 Die Mitgliedsbeiträge sind monatlich im Voraus zu entrichten, spätestens zum 1. des jeweiligen Monats.</p>
+          <p>7.2 Bei Zahlungsverzug werden folgende Mahngebühren erhoben:</p>
+          <table class="agb-table">
+            <thead>
+              <tr>
+                <th>Mahnstufe</th>
+                <th>Gebühr</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1. Erinnerung</td><td>Kostenlos</td></tr>
+              <tr><td>1. Mahnung</td><td>CHF 5.–</td></tr>
+              <tr><td>2. Mahnung</td><td>CHF 30.–</td></tr>
+              <tr><td>Inkasso</td><td>Sämtliche Inkassokosten zu Lasten des Mitglieds</td></tr>
+            </tbody>
+          </table>
+          <p>7.3 Bei andauerndem Zahlungsverzug von mehr als 60 Tagen kann mmac die Mitgliedschaft sperren und rechtliche Schritte einleiten. Alle offenen Beträge bleiben geschuldet.</p>
+        </div>
+
+        <!-- Art. 8 -->
+        <div class="agb-section">
+          <h2>Art. 8 &ndash; Haftung</h2>
+          <p>8.1 Die Nutzung der Einrichtungen und die Teilnahme an Trainings erfolgen auf eigenes Risiko des Mitglieds.</p>
+          <p>8.2 mmac übernimmt keine Haftung für Sach- oder Personenschäden, die im Zusammenhang mit dem Training oder dem Aufenthalt in den Räumlichkeiten entstehen, soweit diese nicht auf grobe Fahrlässigkeit oder Vorsatz seitens mmac zurückzuführen sind.</p>
+          <p>8.3 mmac haftet nicht für den Verlust, Diebstahl oder Beschädigung von persönlichen Gegenständen der Mitglieder, auch nicht in den Garderoben. Die Mitglieder werden empfohlen, Wertsachen nicht mitzubringen oder zu sichern.</p>
+          <div class="agb-highlight">Mitglieder trainieren auf eigenes Risiko. Vor Aufnahme des Trainings empfiehlt mmac eine ärztliche Untersuchung, insbesondere bei Vorerkrankungen.</div>
+        </div>
+
+        <!-- Art. 9 -->
+        <div class="agb-section">
+          <h2>Art. 9 &ndash; Betriebszeiten und -einstellung</h2>
+          <p>9.1 Die Betriebszeiten des MMAC Centers richten sich nach dem aktuellen Stundenplan, der auf der Website und in der Halle ausgehängt ist.</p>
+          <p>9.2 An offiziellen Feiertagen, während Schulferien oder aufgrund ausserordentlicher Ereignisse kann der Betrieb eingeschränkt oder eingestellt werden. Es besteht in diesen Fällen kein Anspruch auf Rückerstattung oder Kompensation von Mitgliedsbeiträgen.</p>
+          <p>9.3 Im Fall von höherer Gewalt (z.B. Pandemie, behördliche Anordnung, Naturkatastrophen) kann mmac den Betrieb vorübergehend oder dauerhaft einstellen, ohne dass daraus Ansprüche des Mitglieds entstehen.</p>
+        </div>
+
+        <!-- Art. 10 -->
+        <div class="agb-section">
+          <h2>Art. 10 &ndash; Vertragsunterbruch und Ruhezeiten</h2>
+          <p>10.1 Das Mitglied kann bei Vorliegen triftiger Gründe (Krankheit, Unfall, Schwangerschaft, beruflich bedingter Auslandaufenthalt) eine Unterbruchsregelung beantragen.</p>
+          <p>10.2 Ein Vertragsunterbruch ist für mindestens 1 Monat und höchstens 9 Monate möglich. Der Unterbruch verlängert die Vertragsdauer entsprechend.</p>
+          <p>10.3 Der Antrag auf Vertragsunterbruch ist schriftlich (per E-Mail oder Post) einzureichen und muss mit entsprechenden Belegen (z.B. ärztliches Zeugnis) belegt werden.</p>
+          <p>10.4 Während des Unterbruchs ruht der Mitgliedsbeitrag. Der Chip muss für die Dauer des Unterbruchs abgegeben werden.</p>
+        </div>
+
+        <!-- Art. 11 -->
+        <div class="agb-section">
+          <h2>Art. 11 &ndash; Vertragsdauer und Kündigung</h2>
+          <p>11.1 Monatsmitgliedschaften (Monatsbeitrag) können mit einer Kündigungsfrist von 1 Monat zum Ende des laufenden Monats schriftlich gekündigt werden.</p>
+          <p>11.2 Die Kündigung muss schriftlich (per E-Mail oder per Brief) erfolgen. Mündliche Kündigungen werden nicht akzeptiert.</p>
+          <p>11.3 Rücktrittsregelung: Bei vorzeitigem Rücktritt vom Vertrag (z.B. nach Abschluss eines Jahresabos) gilt folgende Rückerstattungsstaffel, nach Abzug einer Verwaltungsgebühr von <strong>CHF 30.–</strong>:</p>
+          <table class="agb-table">
+            <thead>
+              <tr>
+                <th>Rücktritt im</th>
+                <th>Rückerstattung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Monat 1</td><td>50 %</td></tr>
+              <tr><td>Monat 2</td><td>40 %</td></tr>
+              <tr><td>Monat 3</td><td>30 %</td></tr>
+              <tr><td>Monat 4</td><td>25 %</td></tr>
+              <tr><td>Monat 5</td><td>15 %</td></tr>
+              <tr><td>Monat 6</td><td>10 %</td></tr>
+              <tr><td>Ab Monat 7</td><td>0 %</td></tr>
+            </tbody>
+          </table>
+          <p>11.4 Die Verwaltungsgebühr von CHF 30.– wird in jedem Fall in Abzug gebracht.</p>
+        </div>
+
+        <!-- Art. 12 -->
+        <div class="agb-section">
+          <h2>Art. 12 &ndash; Überwachung</h2>
+          <p>12.1 Aus Sicherheitsgründen sind die Trainingsbereiche des MMAC Centers mit Videokameras ausgestattet.</p>
+          <p>12.2 Die Überwachung dient ausschliesslich der Sicherheit der Mitglieder und der Verhinderung von Vandalismus und Diebstahl.</p>
+          <p>12.3 In den Garderoben und Sanitäranlagen werden keine Kameras eingesetzt.</p>
+          <p>12.4 Die Aufnahmen werden nach den gesetzlichen Vorgaben gespeichert und nicht an Dritte weitergegeben, es sei denn, dies ist gesetzlich vorgeschrieben oder zur Strafverfolgung notwendig.</p>
+        </div>
+
+        <!-- Art. 13 -->
+        <div class="agb-section">
+          <h2>Art. 13 &ndash; Datenschutz</h2>
+          <p>13.1 mmac verarbeitet personenbezogene Daten der Mitglieder im Einklang mit dem schweizerischen Datenschutzgesetz (DSG) sowie, soweit anwendbar, der Datenschutz-Grundverordnung (DSGVO).</p>
+          <p>13.2 Die erhobenen Daten (Name, Adresse, Kontaktangaben, Zahlungsdaten) werden ausschliesslich für die Zwecke der Mitgliederverwaltung, Kommunikation und Abrechnung verwendet.</p>
+          <p>13.3 Daten werden nicht ohne ausdrückliche Zustimmung des Mitglieds an Dritte weitergegeben, es sei denn, dies ist gesetzlich vorgeschrieben.</p>
+          <p>13.4 Mitglieder haben das Recht auf Auskunft, Berichtigung und Löschung ihrer Daten. Entsprechende Anfragen sind schriftlich an mmac zu richten.</p>
+        </div>
+
+        <!-- Art. 14 -->
+        <div class="agb-section">
+          <h2>Art. 14 &ndash; Anwendbares Recht und Gerichtsstand</h2>
+          <p>14.1 Auf das Vertragsverhältnis zwischen mmac und dem Mitglied findet ausschliesslich schweizerisches Recht Anwendung.</p>
+          <p>14.2 Für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertragsverhältnis gilt als ausschliesslicher Gerichtsstand <strong>Bülach, Kanton Zürich</strong>.</p>
+          <p>14.3 Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, berührt dies die Gültigkeit der übrigen Bestimmungen nicht. Die unwirksame Bestimmung ist durch eine wirksame zu ersetzen, die dem wirtschaftlichen Zweck der unwirksamen am nächsten kommt.</p>
+          <div class="agb-highlight">
+            mmac GmbH &nbsp;|&nbsp; Schlosserstrasse 4, 8180 Bülach &nbsp;|&nbsp;
+            <a href="mailto:mmac@mmac-center.ch" style="color: var(--red-light);">mmac@mmac-center.ch</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <a href="index.html" class="footer-back" aria-label="Zurück zur Hauptseite">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+      </svg>
+      Zurück zur Hauptseite
+    </a>
+    <div class="footer-bottom-agb">
+      <p>&copy; 2026 mmac GmbH. Alle Rechte vorbehalten.</p>
+      <p>
+        <a href="index.html" style="color: var(--red-light); transition: color 200ms ease;">
+          MMAC Center
+        </a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="agb.html" style="color: rgba(255,255,255,0.55);">AGB</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

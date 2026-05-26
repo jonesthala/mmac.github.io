@@ -1552,6 +1552,250 @@
       .events-grid { grid-template-columns: 1fr; }
       .wettkampfe-grid { grid-template-columns: 1fr; }
     }
+
+    /* ===== PRÜFUNGSPROGRAMM ===== */
+    #pruefung { padding: 100px 0; background: #0f0f0f; }
+
+    .pruefung-header { text-align: center; margin-bottom: 64px; }
+
+    .pruefung-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .pruefung-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+
+    .pruefung-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .pruefung-card:hover { transform: translateY(-4px); }
+    .pruefung-card:hover::before { transform: scaleX(1); }
+
+    .pruefung-card--gruen::before { background: #27ae60; }
+    .pruefung-card--gruen:hover { border-color: rgba(39,174,96,0.4); background: rgba(39,174,96,0.07); }
+    .pruefung-card--blau::before { background: #2980b9; }
+    .pruefung-card--blau:hover { border-color: rgba(41,128,185,0.4); background: rgba(41,128,185,0.07); }
+    .pruefung-card--rot::before { background: var(--red); }
+    .pruefung-card--rot:hover { border-color: rgba(192,57,43,0.4); background: rgba(192,57,43,0.07); }
+
+    .pruefung-guertel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .pruefung-guertel-color {
+      display: block;
+      width: 36px; height: 8px;
+      border-radius: 4px;
+    }
+
+    .pruefung-card--gruen .pruefung-guertel-color { background: #27ae60; }
+    .pruefung-card--blau  .pruefung-guertel-color { background: #2980b9; }
+    .pruefung-card--rot   .pruefung-guertel-color { background: var(--red); }
+
+    .pruefung-guertel-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    .pruefung-title { font-size: 1.5rem; color: var(--white); margin-bottom: 4px; }
+    .pruefung-subtitle { font-size: 0.875rem; color: var(--grey); margin-bottom: 20px; }
+
+    .pruefung-list { list-style: none; }
+
+    .pruefung-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      line-height: 1.45;
+    }
+
+    .pruefung-list li:last-child { border-bottom: none; }
+
+    .pruefung-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      margin-top: 5px;
+    }
+
+    .pruefung-card--gruen .pruefung-list li::before { background: #27ae60; }
+    .pruefung-card--blau  .pruefung-list li::before { background: #2980b9; }
+    .pruefung-card--rot   .pruefung-list li::before { background: var(--red); }
+
+    .pruefung-note {
+      text-align: center;
+      margin-top: 56px;
+      padding: 36px 32px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+    }
+
+    .pruefung-note p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .pruefung-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== TAB FORM ===== */
+    .form-tabs {
+      display: flex;
+      border-bottom: 2px solid rgba(255,255,255,0.1);
+      margin-bottom: 32px;
+    }
+
+    .form-tab-btn {
+      flex: 1;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      padding: 14px 16px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .form-tab-btn.active {
+      color: var(--white);
+      border-bottom-color: var(--red);
+    }
+
+    .form-tab-btn:hover { color: rgba(255,255,255,0.8); }
+
+    .form-tab-panel { display: none; }
+    .form-tab-panel.active { display: block; }
+
+    .abo-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .abo-card {
+      border: 2px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 18px 12px;
+      cursor: pointer;
+      transition: border-color var(--transition), background var(--transition);
+      text-align: center;
+      position: relative;
+      display: block;
+    }
+
+    .abo-card input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0; height: 0;
+    }
+
+    .abo-card.selected,
+    .abo-card:has(input:checked) {
+      border-color: var(--red);
+      background: rgba(192,57,43,0.1);
+    }
+
+    .abo-card-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .abo-card-price {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .abo-card-desc { font-size: 0.7rem; color: rgba(255,255,255,0.45); }
+
+    .form-checkbox-wrap { margin-bottom: 20px; }
+
+    .form-checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .form-checkbox-group input[type="checkbox"] {
+      width: 18px; height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--red);
+      cursor: pointer;
+    }
+
+    .form-checkbox-group label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+      text-transform: none;
+      letter-spacing: 0;
+      cursor: pointer;
+    }
+
+    .form-checkbox-group label a { color: var(--red-light); }
+    .form-checkbox-group label a:hover { color: var(--white); }
+
+    .form-checkbox-error {
+      display: none;
+      font-size: 0.78rem;
+      color: #e74c3c;
+      margin-top: 6px;
+      margin-left: 30px;
+    }
+
+    .form-checkbox-wrap.has-error .form-checkbox-error { display: block; }
+
+    @media (max-width: 600px) {
+      .abo-cards { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -1572,6 +1816,7 @@
         <li><a href="#stundenplan">Stundenplan</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#wettkampfe">Wettkämpfe</a></li>
+        <li><a href="#pruefung">Prüfungsprogramm</a></li>
         <li><a href="#galerie">Galerie</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
@@ -1591,6 +1836,7 @@
     <a href="#stundenplan" class="mobile-link">Stundenplan</a>
     <a href="#events"      class="mobile-link">Events</a>
     <a href="#wettkampfe"  class="mobile-link">Wettkämpfe</a>
+    <a href="#pruefung"    class="mobile-link">Prüfungsprogramm</a>
     <a href="#galerie"     class="mobile-link">Galerie</a>
     <a href="#kontakt"     class="mobile-link">Kontakt</a>
     <a href="#kontakt" class="btn btn-primary">Probetraining buchen</a>
@@ -2165,6 +2411,82 @@
   </div>
 </section>
 
+<!-- ===== PRÜFUNGSPROGRAMM ===== -->
+<section id="pruefung" aria-labelledby="pruefung-heading">
+  <div class="container">
+    <div class="pruefung-header">
+      <p class="section-label reveal">Hapkido Prüfungen</p>
+      <h2 class="section-title reveal reveal-delay-1" id="pruefung-heading">
+        Hapkido <span>Prüfungsprogramm</span>
+      </h2>
+      <p class="section-subtitle reveal reveal-delay-2" style="margin:0 auto;">
+        Vom Weissgurt bis zum Schwarzgurt – dein Weg im MMAC Center
+      </p>
+    </div>
+    <div class="pruefung-grid">
+
+      <article class="pruefung-card pruefung-card--gruen reveal" aria-label="Grüngurt Prüfungsprogramm">
+        <div class="pruefung-guertel-badge">
+          <span class="pruefung-guertel-color" aria-hidden="true"></span>
+          <span class="pruefung-guertel-label">Stufe 1</span>
+        </div>
+        <h3 class="pruefung-title">Grüngurt</h3>
+        <p class="pruefung-subtitle">Grundlagen &amp; Basistechniken</p>
+        <ul class="pruefung-list">
+          <li>Falltechniken vorwärts und rückwärts</li>
+          <li>Grundstellungen und Bewegungen</li>
+          <li>Schlag- und Tritttechniken Grundform</li>
+          <li>Hebeltechniken Stufe 1 (Handgelenk, Ellenbogen)</li>
+          <li>Würgetechniken Abwehr Grundform</li>
+          <li>Freier Kampf Grundform (3 Runden à 1 Min.)</li>
+          <li>Theorie: Geschichte Hapkido, Grundprinzipien</li>
+        </ul>
+      </article>
+
+      <article class="pruefung-card pruefung-card--blau reveal reveal-delay-1" aria-label="Blaugurt Prüfungsprogramm">
+        <div class="pruefung-guertel-badge">
+          <span class="pruefung-guertel-color" aria-hidden="true"></span>
+          <span class="pruefung-guertel-label">Stufe 2</span>
+        </div>
+        <h3 class="pruefung-title">Blaugurt</h3>
+        <p class="pruefung-subtitle">Fortgeschrittene Techniken</p>
+        <ul class="pruefung-list">
+          <li>Alle Grüngurt-Techniken als Voraussetzung</li>
+          <li>Wurftechniken (Hüft-, Schulter-, Beintechniken)</li>
+          <li>Hebeltechniken Stufe 2 (kombinierte Hebel)</li>
+          <li>Waffentechniken: Abwehr gegen Stock</li>
+          <li>Mehrfachgegner Grundform</li>
+          <li>Freier Kampf (5 Runden à 1.5 Min.)</li>
+          <li>Theorie: Prinzipien Kreis, Fluss, Harmonie</li>
+        </ul>
+      </article>
+
+      <article class="pruefung-card pruefung-card--rot reveal reveal-delay-2" aria-label="Rotgurt Prüfungsprogramm">
+        <div class="pruefung-guertel-badge">
+          <span class="pruefung-guertel-color" aria-hidden="true"></span>
+          <span class="pruefung-guertel-label">Stufe 3</span>
+        </div>
+        <h3 class="pruefung-title">Rotgurt</h3>
+        <p class="pruefung-subtitle">Vorstufe Schwarzgurt</p>
+        <ul class="pruefung-list">
+          <li>Alle vorherigen Techniken auf höherem Niveau</li>
+          <li>Waffentechniken: Messerabwehr, Stocktechniken aktiv</li>
+          <li>Boden- und Befreiungstechniken</li>
+          <li>Situationsangepasste Selbstverteidigung</li>
+          <li>Demonstration einer kompletten Kata</li>
+          <li>Freier Kampf (5 Runden à 2 Min., ein Gegner Schwarzgurt)</li>
+          <li>Theorie: Prüfungsablauf, Lehrpflicht ab Rotgurt</li>
+        </ul>
+      </article>
+
+    </div>
+    <div class="pruefung-note reveal">
+      <p>Prüfungen finden nach Ermessen der Trainer statt. Anmeldung und Termine auf Anfrage bei René Maier.</p>
+      <a href="#kontakt" class="btn btn-primary">Jetzt anfragen</a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== BANNER ===== -->
 <section id="banner" aria-label="MMAC Center – Motivation">
   <div class="banner-bg" role="img" aria-label="Kampftraining Hintergrundbild"></div>
@@ -2395,66 +2717,204 @@
         </div>
       </div>
       <div class="kontakt-form reveal reveal-delay-1">
-        <h3>Probetraining anmelden</h3>
-        <form id="contact-form" novalidate aria-label="Probetraining Anmeldeformular">
-          <div class="form-row">
-            <div class="form-group" id="fg-vorname">
-              <label for="vorname">Vorname *</label>
-              <input type="text" id="vorname" name="vorname"
-                     placeholder="Max" autocomplete="given-name" required
-                     aria-required="true" aria-describedby="vorname-error" />
-              <span class="error-msg" id="vorname-error" role="alert">Bitte Vorname eingeben.</span>
-            </div>
-            <div class="form-group" id="fg-nachname">
-              <label for="nachname">Nachname *</label>
-              <input type="text" id="nachname" name="nachname"
-                     placeholder="Mustermann" autocomplete="family-name" required
-                     aria-required="true" aria-describedby="nachname-error" />
-              <span class="error-msg" id="nachname-error" role="alert">Bitte Nachname eingeben.</span>
-            </div>
-          </div>
-          <div class="form-group" id="fg-email">
-            <label for="email">E-Mail *</label>
-            <input type="email" id="email" name="email"
-                   placeholder="max@beispiel.ch" autocomplete="email" required
-                   aria-required="true" aria-describedby="email-error" />
-            <span class="error-msg" id="email-error" role="alert">Bitte gültige E-Mail eingeben.</span>
-          </div>
-          <div class="form-group" id="fg-telefon">
-            <label for="telefon">Telefon</label>
-            <input type="tel" id="telefon" name="telefon"
-                   placeholder="+41 79 000 00 00" autocomplete="tel" />
-          </div>
-          <div class="form-group" id="fg-kurs">
-            <label for="kurs">Interessierter Kurs *</label>
-            <select id="kurs" name="kurs" required
-                    aria-required="true" aria-describedby="kurs-error">
-              <option value="">Bitte wählen…</option>
-              <option value="kinder-hapkido">Kinder Hapkido</option>
-              <option value="hapkido">Selbstverteidigung / Hapkido</option>
-              <option value="kickboxen">Kickboxen / K1</option>
-              <option value="thaiboxen">Thaiboxen</option>
-              <option value="sandaboxen">Sandaboxen</option>
-              <option value="krav-maga">Krav Maga</option>
-              <option value="personal-training">Personal Training</option>
-              <option value="bootcamp">Functional Training / Bootcamp</option>
-              <option value="akupressur">Akupressur</option>
-              <option value="weiss-nicht">Weiss noch nicht</option>
-            </select>
-            <span class="error-msg" id="kurs-error" role="alert">Bitte einen Kurs auswählen.</span>
-          </div>
-          <div class="form-group" id="fg-nachricht">
-            <label for="nachricht">Nachricht / Fragen</label>
-            <textarea id="nachricht" name="nachricht"
-                      placeholder="Ich interessiere mich für…"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;" id="submit-btn">
-            Probetraining anfragen
+        <div class="form-tabs" role="tablist" aria-label="Anmeldeformular Tabs">
+          <button class="form-tab-btn active" role="tab" aria-selected="true"
+                  aria-controls="tab-probetraining" id="tab-btn-probetraining">
+            Probetraining
           </button>
-        </form>
-        <div class="form-success" id="form-success" role="status" aria-live="polite">
-          Vielen Dank! Wir melden uns so bald wie möglich bei dir.
+          <button class="form-tab-btn" role="tab" aria-selected="false"
+                  aria-controls="tab-mitgliedschaft" id="tab-btn-mitgliedschaft">
+            Mitgliedschaft
+          </button>
         </div>
+
+        <!-- Tab 1: Probetraining -->
+        <div id="tab-probetraining" class="form-tab-panel active" role="tabpanel"
+             aria-labelledby="tab-btn-probetraining">
+          <form id="form-probetraining" novalidate aria-label="Probetraining Anmeldeformular">
+            <div class="form-row">
+              <div class="form-group" id="pt-fg-vorname">
+                <label for="pt-vorname">Vorname *</label>
+                <input type="text" id="pt-vorname" name="vorname"
+                       placeholder="Max" autocomplete="given-name" required
+                       aria-required="true" aria-describedby="pt-vorname-error" />
+                <span class="error-msg" id="pt-vorname-error" role="alert">Bitte Vorname eingeben.</span>
+              </div>
+              <div class="form-group" id="pt-fg-nachname">
+                <label for="pt-nachname">Nachname *</label>
+                <input type="text" id="pt-nachname" name="nachname"
+                       placeholder="Mustermann" autocomplete="family-name" required
+                       aria-required="true" aria-describedby="pt-nachname-error" />
+                <span class="error-msg" id="pt-nachname-error" role="alert">Bitte Nachname eingeben.</span>
+              </div>
+            </div>
+            <div class="form-group" id="pt-fg-email">
+              <label for="pt-email">E-Mail *</label>
+              <input type="email" id="pt-email" name="email"
+                     placeholder="max@beispiel.ch" autocomplete="email" required
+                     aria-required="true" aria-describedby="pt-email-error" />
+              <span class="error-msg" id="pt-email-error" role="alert">Bitte gültige E-Mail eingeben.</span>
+            </div>
+            <div class="form-group">
+              <label for="pt-telefon">Telefon</label>
+              <input type="tel" id="pt-telefon" name="telefon"
+                     placeholder="+41 79 000 00 00" autocomplete="tel" />
+            </div>
+            <div class="form-group" id="pt-fg-kurs">
+              <label for="pt-kurs">Gewünschter Kurs *</label>
+              <select id="pt-kurs" name="kurs" required
+                      aria-required="true" aria-describedby="pt-kurs-error">
+                <option value="">Bitte wählen…</option>
+                <option value="kinder-hapkido">Kinder Hapkido</option>
+                <option value="hapkido">Selbstverteidigung / Hapkido</option>
+                <option value="kickboxen">Kickboxen / K1</option>
+                <option value="thaiboxen">Thaiboxen</option>
+                <option value="sandaboxen">Sandaboxen</option>
+                <option value="krav-maga">Krav Maga</option>
+                <option value="personal-training">Personal Training</option>
+                <option value="bootcamp">Functional Training / Bootcamp</option>
+                <option value="akupressur">Akupressur</option>
+                <option value="weiss-nicht">Weiss noch nicht</option>
+              </select>
+              <span class="error-msg" id="pt-kurs-error" role="alert">Bitte einen Kurs auswählen.</span>
+            </div>
+            <div class="form-group">
+              <label for="pt-nachricht">Nachricht / Fragen</label>
+              <textarea id="pt-nachricht" name="nachricht"
+                        placeholder="Ich interessiere mich für…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;" id="pt-submit-btn">
+              Probetraining anfragen
+            </button>
+          </form>
+          <div class="form-success" id="pt-form-success" role="status" aria-live="polite">
+            Danke! Wir melden uns so bald wie möglich bei dir.
+          </div>
+        </div>
+
+        <!-- Tab 2: Mitgliedschaft -->
+        <div id="tab-mitgliedschaft" class="form-tab-panel" role="tabpanel"
+             aria-labelledby="tab-btn-mitgliedschaft">
+          <form id="form-mitgliedschaft" novalidate aria-label="Mitgliedschaft Anmeldeformular">
+            <div class="form-row">
+              <div class="form-group" id="ms-fg-vorname">
+                <label for="ms-vorname">Vorname *</label>
+                <input type="text" id="ms-vorname" name="vorname"
+                       placeholder="Max" autocomplete="given-name" required
+                       aria-required="true" aria-describedby="ms-vorname-error" />
+                <span class="error-msg" id="ms-vorname-error" role="alert">Bitte Vorname eingeben.</span>
+              </div>
+              <div class="form-group" id="ms-fg-nachname">
+                <label for="ms-nachname">Nachname *</label>
+                <input type="text" id="ms-nachname" name="nachname"
+                       placeholder="Mustermann" autocomplete="family-name" required
+                       aria-required="true" aria-describedby="ms-nachname-error" />
+                <span class="error-msg" id="ms-nachname-error" role="alert">Bitte Nachname eingeben.</span>
+              </div>
+            </div>
+            <div class="form-group" id="ms-fg-geburtsdatum">
+              <label for="ms-geburtsdatum">Geburtsdatum *</label>
+              <input type="date" id="ms-geburtsdatum" name="geburtsdatum" required
+                     aria-required="true" aria-describedby="ms-geburtsdatum-error" />
+              <span class="error-msg" id="ms-geburtsdatum-error" role="alert">Bitte Geburtsdatum eingeben.</span>
+            </div>
+            <div class="form-group" id="ms-fg-email">
+              <label for="ms-email">E-Mail *</label>
+              <input type="email" id="ms-email" name="email"
+                     placeholder="max@beispiel.ch" autocomplete="email" required
+                     aria-required="true" aria-describedby="ms-email-error" />
+              <span class="error-msg" id="ms-email-error" role="alert">Bitte gültige E-Mail eingeben.</span>
+            </div>
+            <div class="form-group" id="ms-fg-telefon">
+              <label for="ms-telefon">Telefon *</label>
+              <input type="tel" id="ms-telefon" name="telefon"
+                     placeholder="+41 79 000 00 00" autocomplete="tel" required
+                     aria-required="true" aria-describedby="ms-telefon-error" />
+              <span class="error-msg" id="ms-telefon-error" role="alert">Bitte Telefonnummer eingeben.</span>
+            </div>
+            <div class="form-group" id="ms-fg-strasse">
+              <label for="ms-strasse">Strasse / Nr. *</label>
+              <input type="text" id="ms-strasse" name="strasse"
+                     placeholder="Musterstrasse 12" autocomplete="street-address" required
+                     aria-required="true" aria-describedby="ms-strasse-error" />
+              <span class="error-msg" id="ms-strasse-error" role="alert">Bitte Strasse eingeben.</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group" id="ms-fg-plz">
+                <label for="ms-plz">PLZ *</label>
+                <input type="text" id="ms-plz" name="plz"
+                       placeholder="8180" maxlength="4" autocomplete="postal-code" required
+                       aria-required="true" aria-describedby="ms-plz-error" />
+                <span class="error-msg" id="ms-plz-error" role="alert">Bitte PLZ eingeben.</span>
+              </div>
+              <div class="form-group" id="ms-fg-ort">
+                <label for="ms-ort">Ort *</label>
+                <input type="text" id="ms-ort" name="ort"
+                       placeholder="Bachenbülach" autocomplete="address-level2" required
+                       aria-required="true" aria-describedby="ms-ort-error" />
+                <span class="error-msg" id="ms-ort-error" role="alert">Bitte Ort eingeben.</span>
+              </div>
+            </div>
+            <div class="form-group" id="ms-fg-abo">
+              <label>Abo-Auswahl *</label>
+              <div class="abo-cards" role="radiogroup" aria-describedby="ms-abo-error">
+                <label class="abo-card" id="abo-card-einzel">
+                  <input type="radio" name="abo" value="einzel" />
+                  <div class="abo-card-title">Einzelmitglied</div>
+                  <div class="abo-card-price">CHF 95.–</div>
+                  <div class="abo-card-desc">/ Monat · monatlich kündbar</div>
+                </label>
+                <label class="abo-card" id="abo-card-familie">
+                  <input type="radio" name="abo" value="familie" />
+                  <div class="abo-card-title">Familien-Abo</div>
+                  <div class="abo-card-price">CHF 160.–</div>
+                  <div class="abo-card-desc">/ Monat · bis 4 Personen</div>
+                </label>
+                <label class="abo-card" id="abo-card-jahr">
+                  <input type="radio" name="abo" value="jahresabo" />
+                  <div class="abo-card-title">Jahresabo</div>
+                  <div class="abo-card-price">Auf Anfrage</div>
+                  <div class="abo-card-desc">Preis auf Anfrage</div>
+                </label>
+              </div>
+              <span class="error-msg" id="ms-abo-error" role="alert">Bitte ein Abo auswählen.</span>
+            </div>
+            <div class="form-group" id="ms-fg-kurs">
+              <label for="ms-kurs">Gewünschter Kurs *</label>
+              <select id="ms-kurs" name="kurs" required
+                      aria-required="true" aria-describedby="ms-kurs-error">
+                <option value="">Bitte wählen…</option>
+                <option value="kinder-hapkido">Kinder Hapkido</option>
+                <option value="hapkido">Selbstverteidigung / Hapkido</option>
+                <option value="kickboxen">Kickboxen / K1</option>
+                <option value="thaiboxen">Thaiboxen</option>
+                <option value="sandaboxen">Sandaboxen</option>
+                <option value="krav-maga">Krav Maga</option>
+                <option value="personal-training">Personal Training</option>
+                <option value="bootcamp">Functional Training / Bootcamp</option>
+                <option value="akupressur">Akupressur</option>
+              </select>
+              <span class="error-msg" id="ms-kurs-error" role="alert">Bitte einen Kurs auswählen.</span>
+            </div>
+            <div class="form-checkbox-wrap" id="ms-fg-agb">
+              <div class="form-checkbox-group">
+                <input type="checkbox" id="ms-agb" name="agb" required
+                       aria-required="true" aria-describedby="ms-agb-error" />
+                <label for="ms-agb">
+                  Ich akzeptiere die <a href="agb.html" target="_blank">AGB</a> der mmac GmbH *
+                </label>
+              </div>
+              <span class="form-checkbox-error" id="ms-agb-error" role="alert">Bitte die AGB akzeptieren.</span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px;" id="ms-submit-btn">
+              Mitgliedschaft beantragen
+            </button>
+          </form>
+          <div class="form-success" id="ms-form-success" role="status" aria-live="polite">
+            Danke! Wir melden uns so bald wie möglich bei dir.
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -2484,9 +2944,11 @@
           <li><a href="#stundenplan">Stundenplan</a></li>
           <li><a href="#events">Events</a></li>
           <li><a href="#wettkampfe">Wettkämpfe</a></li>
+          <li><a href="#pruefung">Prüfungsprogramm</a></li>
           <li><a href="#galerie">Galerie</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
           <li><a href="#kontakt">Probetraining</a></li>
+          <li><a href="agb.html">AGB</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -2511,9 +2973,9 @@
     <div class="footer-bottom">
       <p>&copy; 2026 MMAC Center. Alle Rechte vorbehalten.</p>
       <p>
-        <a href="https://mmac-center.ch" target="_blank" rel="noopener noreferrer">
-          mmac-center.ch
-        </a>
+        <a href="agb.html">AGB</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://mmac-center.ch" target="_blank" rel="noopener noreferrer">mmac-center.ch</a>
       </p>
     </div>
   </div>
@@ -2612,11 +3074,27 @@
   lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-  // Contact form validation
-  const form       = document.getElementById('contact-form');
-  const formSuccess = document.getElementById('form-success');
-  const submitBtn  = document.getElementById('submit-btn');
+  // Tab switching
+  const tabBtns = document.querySelectorAll('.form-tab-btn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      document.querySelectorAll('.form-tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById(btn.getAttribute('aria-controls')).classList.add('active');
+    });
+  });
 
+  // Abo card visual selection
+  document.querySelectorAll('.abo-card input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      document.querySelectorAll('.abo-card').forEach(c => c.classList.remove('selected'));
+      if (radio.checked) radio.closest('.abo-card').classList.add('selected');
+    });
+  });
+
+  // Generic field validator
   function validateField(id, groupId, check) {
     const el    = document.getElementById(id);
     const group = document.getElementById(groupId);
@@ -2626,39 +3104,67 @@
     return valid;
   }
 
-  form.addEventListener('submit', e => {
+  // Probetraining form
+  const ptForm    = document.getElementById('form-probetraining');
+  const ptSuccess = document.getElementById('pt-form-success');
+  const ptSubmit  = document.getElementById('pt-submit-btn');
+
+  ptForm.addEventListener('submit', e => {
     e.preventDefault();
+    const ok = [
+      validateField('pt-vorname',  'pt-fg-vorname',  v => v.length > 0),
+      validateField('pt-nachname', 'pt-fg-nachname', v => v.length > 0),
+      validateField('pt-email',    'pt-fg-email',    v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)),
+      validateField('pt-kurs',     'pt-fg-kurs',     v => v.length > 0),
+    ].every(Boolean);
+    if (!ok) return;
+    ptSubmit.disabled = true;
+    ptSubmit.textContent = 'Wird gesendet…';
+    setTimeout(() => { ptForm.style.display = 'none'; ptSuccess.style.display = 'block'; }, 800);
+  });
+
+  ['pt-vorname', 'pt-nachname', 'pt-kurs'].forEach(id => {
+    document.getElementById(id).addEventListener('blur', () => {
+      validateField(id, id.replace('pt-', 'pt-fg-'), v => v.length > 0);
+    });
+  });
+  document.getElementById('pt-email').addEventListener('blur', () => {
+    validateField('pt-email', 'pt-fg-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+  });
+
+  // Mitgliedschaft form
+  const msForm    = document.getElementById('form-mitgliedschaft');
+  const msSuccess = document.getElementById('ms-form-success');
+  const msSubmit  = document.getElementById('ms-submit-btn');
+
+  msForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const aboSelected = document.querySelector('input[name="abo"]:checked');
+    const aboGroup    = document.getElementById('ms-fg-abo');
+    aboGroup.classList.toggle('has-error', !aboSelected);
+
+    const agbEl    = document.getElementById('ms-agb');
+    const agbWrap  = document.getElementById('ms-fg-agb');
+    agbWrap.classList.toggle('has-error', !agbEl.checked);
 
     const ok = [
-      validateField('vorname',  'fg-vorname',  v => v.length > 0),
-      validateField('nachname', 'fg-nachname', v => v.length > 0),
-      validateField('email',    'fg-email',    v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)),
-      validateField('kurs',     'fg-kurs',     v => v.length > 0),
+      validateField('ms-vorname',      'ms-fg-vorname',      v => v.length > 0),
+      validateField('ms-nachname',     'ms-fg-nachname',     v => v.length > 0),
+      validateField('ms-geburtsdatum', 'ms-fg-geburtsdatum', v => v.length > 0),
+      validateField('ms-email',        'ms-fg-email',        v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)),
+      validateField('ms-telefon',      'ms-fg-telefon',      v => v.length > 0),
+      validateField('ms-strasse',      'ms-fg-strasse',      v => v.length > 0),
+      validateField('ms-plz',          'ms-fg-plz',          v => v.length > 0),
+      validateField('ms-ort',          'ms-fg-ort',          v => v.length > 0),
+      validateField('ms-kurs',         'ms-fg-kurs',         v => v.length > 0),
+      !!aboSelected,
+      agbEl.checked,
     ].every(Boolean);
 
     if (!ok) return;
-
-    // Simulate submission (replace with real endpoint if needed)
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Wird gesendet…';
-
-    setTimeout(() => {
-      form.style.display = 'none';
-      formSuccess.style.display = 'block';
-    }, 800);
-  });
-
-  // Live validation on blur
-  ['vorname', 'nachname', 'email', 'kurs'].forEach(id => {
-    const el = document.getElementById(id);
-    el.addEventListener('blur', () => {
-      const groupId = 'fg-' + id;
-      if (id === 'email') {
-        validateField(id, groupId, v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
-      } else {
-        validateField(id, groupId, v => v.length > 0);
-      }
-    });
+    msSubmit.disabled = true;
+    msSubmit.textContent = 'Wird gesendet…';
+    setTimeout(() => { msForm.style.display = 'none'; msSuccess.style.display = 'block'; }, 800);
   });
 </script>
 </body>
