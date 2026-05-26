@@ -3267,16 +3267,22 @@
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
 
+  const navLogo = document.querySelector('.nav-logo');
+
   function closeMobileMenu() {
     mobileMenu.classList.remove('open');
     hamburger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    navLogo.style.opacity = '1';
+    navLogo.style.pointerEvents = 'auto';
   }
 
   hamburger.addEventListener('click', () => {
     const isOpen = mobileMenu.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', String(isOpen));
     document.body.style.overflow = isOpen ? 'hidden' : '';
+    navLogo.style.opacity = isOpen ? '0' : '1';
+    navLogo.style.pointerEvents = isOpen ? 'none' : 'auto';
   });
 
   document.querySelectorAll('.mobile-link, .mobile-menu .btn').forEach(link => {
