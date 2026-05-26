@@ -283,23 +283,39 @@
       z-index: 99;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 32px;
+      justify-content: flex-start;
+      padding: calc(var(--nav-h) + 32px) 24px 32px;
+      gap: 0;
+      overflow-y: auto;
     }
 
     .mobile-menu.open { display: flex; }
 
     .mobile-menu a {
       font-family: 'Oswald', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: clamp(1rem, 4.5vw, 1.25rem);
+      font-weight: 600;
       text-transform: uppercase;
       color: var(--white);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       transition: color var(--transition);
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
 
+    .mobile-menu a:last-child { border-bottom: none; }
     .mobile-menu a:hover { color: var(--red); }
+
+    .mobile-menu .btn {
+      margin-top: 1.5rem;
+      width: 100%;
+      justify-content: center;
+      font-size: 0.9rem;
+      border-bottom: none;
+    }
 
     /* ===== HERO ===== */
     #hero {
@@ -1102,6 +1118,44 @@
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
       .footer-grid .footer-brand { grid-column: span 2; }
       .footer-bottom { flex-direction: row; align-items: center; justify-content: space-between; text-align: left; gap: 0; }
+    }
+
+    /* ── Mobile overrides (max 767px) ─────── */
+    @media (max-width: 767px) {
+
+      /* Hamburger button — keep compact */
+      .hamburger {
+        width: 36px;
+        height: 36px;
+        padding: 6px;
+        gap: 4px;
+      }
+
+      .hamburger span { width: 22px; }
+
+      /* Hero — tighten up */
+      .hero-title { font-size: clamp(1.5rem, 7vw, 2rem); }
+
+      .hero-stats {
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      /* Section headings */
+      .section-title { font-size: clamp(1.4rem, 6vw, 2rem); }
+
+      .section-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+      }
+
+      /* Kurs-cards: already 1-col, just tighten padding */
+      .kurs-card { padding: 20px; }
+
+      /* Form submit button full-width */
+      button[type="submit"],
+      .kontakt-form .btn { width: 100%; justify-content: center; }
+
     }
 
     /* ── 1024px and up ─────────────────────── */
